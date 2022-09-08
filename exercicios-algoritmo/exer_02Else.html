@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .saldo-positivo {
+        color: blue;
+    }
+
+    .saldo-negativo {
+        color: red;
+    }
+</style>
+<body>
+    Saldo da sua conta: <input id="input_valor_saldo" type="text"> <br>
+    Valor do débito: <input id="input_valor_debito" type="text"> <br>
+    <button onclick="analisar_conta()">Analisar conta</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function analisar_conta() {
+        var saldo_conta = Number(input_valor_saldo.value)
+        var valor_debito = Number(input_valor_debito.value)
+
+        var saldo_atual = saldo_conta - valor_debito
+
+        if (saldo_atual >= 0) {
+            div_resultado.innerHTML = `<p class='saldo-positivo'>  <i>o saldo atual da conta corrente é ${saldo_atual}.</i> </p>`
+        } else {
+            div_resultado.innerHTML = `<p class='saldo-negativo'> <b>o saldo atual da conta corrente é ${saldo_atual}.</b> <p>`
+        }
+    }
+
+</script>
