@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de infrações: <input id="qtd_fracoes_input" type="text"> <br>
+    Valor do carro: <input id="valor_carro_input" type="text"> <br>
+    <button onclick="calcular_seguro()">Calcular seguro</button> 
+
+ <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+
+function calcular_seguro() {
+    var qtd_fracoes = Number(qtd_fracoes_input.value)
+    var valor_carro = Number(valor_carro_input.value)
+
+    var seguro = valor_carro * 0.015 
+
+    if (qtd_fracoes < 3) {
+        seguro = seguro * 0.90
+    }
+    
+    div_mostrar.innerHTML = `Seu seguro é de: ${seguro}`
+}
+
+</script>

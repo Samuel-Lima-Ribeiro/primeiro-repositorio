@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Pimeira nota:  <input id="input_1_nota" type="text">  <br>
+    Segunda nota: <input id="input_2_nota" type="text"> <br>
+    Terceira nota: <input id="input_3_nota" type="text">  <br>
+    <button onclick="calcular_desempenho()">Analisar desempenho</button>
+    
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular_desempenho() {
+        var primeira_nota = Number(input_1_nota.value)
+        var segunda_nota = Number(input_2_nota.value)
+        var terceira_nota = Number(input_3_nota.value)
+        var media = (primeira_nota + segunda_nota + terceira_nota) / 3
+        div_mostrar.innerHTML = `<b>Sua média foi de ${media.toFixed(2)}.</b>`
+        if (media > 9.4) {
+            div_mostrar.innerHTML += ` <b>Parabéns você é fora de série!</b>`
+        }
+    }
+
+</script>

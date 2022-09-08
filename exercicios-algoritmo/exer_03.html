@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de filhos: <input id="qtd_filhos_input" type="text"> <br>
+    <button onclick="verificar_situacao()">Verificar situação</button> 
+    <div id="div_mostrar"></div>
+</body>
+</html>
+
+<script>
+
+    function verificar_situacao() {
+        var qtd_filhos = Number(qtd_filhos_input.value)
+
+        if (qtd_filhos == 0) {
+            div_mostrar.innerHTML = `Sem descendentes`
+        }    
+        if (qtd_filhos == 1) {
+            div_mostrar.innerHTML = `Filho único`
+        }
+        if (qtd_filhos >= 2) {
+            div_mostrar.innerHTML = `Crescei e multiplicai-vos`
+        }
+        
+        
+    }
+
+</script>
