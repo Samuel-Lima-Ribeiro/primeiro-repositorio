@@ -9,6 +9,7 @@
 <body>
     Valor da pizza: <input id="valor_pizza_input" type="text"> <br>
     Quantidade de amigos: <input id="qtd_amigos_input" type="text"> <br>
+    Valor máximo por amigo: <input id="valor_maximo_amigo_input" type="text"> <br>
     <button onclick="calcular_valor()">
         Rola a pizza?
     </button>
@@ -25,10 +26,10 @@
         
         div_mostrar.innerHTML = `Cada amigo vai pagar R$${valor_por_amigo} pela pizza.`
 
-        if (valor_por_amigo <= 20) {
-            
-        } {
-        div_mostrar.innerHTML += ` Deu ruim! Pizza muito cara!`
+        if (valor_por_amigo <= valor_maximo_amigo_input.value) {
+            div_mostrar.innerHTML += `<br>Uhu! Vamos pedir a pizza!`    
+            } else {
+                div_mostrar.innerHTML += `<br>Deu ruim! Pizza muito cara!`
         }
     }
 

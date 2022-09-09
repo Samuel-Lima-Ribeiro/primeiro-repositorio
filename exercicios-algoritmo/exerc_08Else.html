@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de partidas jogadas: <input id="input_qtd_partidas" type="text"> <br>
+    Gols marcados: <input id="input_qtd_gols" type="text"> <br>
+    <button onclick="calculo_media_gol()">Estudar atacante</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function calculo_media_gol() {
+        var qtd_partidas = input_qtd_partidas.value
+        var qtd_gols = input_qtd_gols.value
+        var media_gol = qtd_gols / qtd_partidas
+
+        if (media_gol > 0.6) {
+            div_resultado.innerHTML = `
+            Atacante de futuro <br>
+            <img src="https://conteudo.imguol.com.br/c/esporte/96/2021/04/27/rony-comemora-o-gol-do-palmeiras-contra-o-independiente-del-valle-1619572630051_v2_1x1.jpg" width='200'> 
+            <br>Sua média de gols/partida é de ${media_gol}
+            `
+        } else {
+            div_resultado.innerHTML = `
+            Atacante mediano <br>
+            <img src="https://conteudo.imguol.com.br/c/esporte/3f/2022/08/04/deyverson-novo-reforco-do-cuiaba-1659639300292_v2_3x4.jpg" width='200'>
+            <br>Sua média de gols/partida é de ${media_gol}
+            `  
+        }
+        if (media_gol < 0.2) { 
+            div_resultado.innerHTML = `
+            Melhor mudar de posição <br>
+            <img src="https://static.corinthians.com.br/uploads/1626838286a6d8ecc0b8747fb7c28e0d64c7dfcbe8.jpg" width='200'>
+            <br>Sua média de gols/partida é de ${media_gol}
+            `
+        }
+
+    }
+
+</script>

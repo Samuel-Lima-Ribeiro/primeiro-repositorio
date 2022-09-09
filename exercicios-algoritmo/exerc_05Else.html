@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Frequência do aluno: <input id="input_frequencia_aluno" type="text"> <br>
+    <button onclick="calculo_frequencia()">Analisar frequência</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function calculo_frequencia() {
+        var frequencia_aluno = Number(input_frequencia_aluno.value)
+
+        if (frequencia_aluno < 50) {
+            div_resultado.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Ea3o6mA5zIwdksTslQdQpw2HW16PjR-76A&usqp=CAU" width="200">`
+        } else {
+            div_resultado.innerHTML = `<img src="https://img1.gratispng.com/20180306/rae/kisspng-child-reading-book-vector-book-mountain-book-sea-5a9ea4f6a30c22.6297904215203463586679.jpg" width="200">`
+        }
+    }
+
+</script>
