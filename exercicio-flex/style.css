@@ -1,5 +1,5 @@
 .container {
-    background-color: pink;
+    background-color: gray;
     display: flex;
 }
 
@@ -25,6 +25,15 @@
 
 .space-nome {
     justify-content: space-evenly;
+}
+
+.exercicioB{
+    flex-direction: column-reverse;
+}
+
+.desafio {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
 }
 
 .filho {
