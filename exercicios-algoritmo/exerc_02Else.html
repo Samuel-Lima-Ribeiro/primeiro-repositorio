@@ -23,9 +23,9 @@
         var saldo_atual = saldo_conta - valor_debito
 
         if (saldo_atual >= 0) {
-            div_resultado.innerHTML = `<i style='color: blue'>  o saldo atual da conta corrente é ${saldo_atual}.`
+            div_resultado.innerHTML = `<i style='color: blue'>  o saldo atual da conta corrente é ${saldo_atual.toLocaleString("pt-BR", {style: "currency", currency: "BRL", maximumFractionDigits: 2})}`
         } else {
-            div_resultado.innerHTML = `<b style='color: red'> o saldo atual da conta corrente é ${saldo_atual}.`
+            div_resultado.innerHTML = `<b style='color: red'> o saldo atual da conta corrente é ${saldo_atual.toLocaleString("pt-BR", {style: "currency", currency: "BRL", maximumFractionDigits: 2})}`
         }
     }
 
