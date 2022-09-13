@@ -14,12 +14,11 @@ body {
 header {
     background-color: black;
     border-bottom: 2px solid #32b9cd;
-    padding: 15px 0;
+    padding: 15px 0; /* espaçar de dentro para fora */
 }
 
 .container {
     width: 80%;
-    color: white;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
@@ -46,4 +45,70 @@ header {
 .navegacao ul li {
     font-size: 12px;
     cursor: pointer;
+}
+
+/* conteudo da pagina */
+
+/* Banner */
+
+.banner {
+    background-image: url("./assets/img/bg-jelly-fish-para_outras_pags.png");
+    padding: 100px 0; /* crescer a imagem / 100 para cima e baixo / 0 para os lados  // le no sentido horario*/
+    background-size: cover; /* centralizar a imagem */
+}
+
+.banner .container {
+    height: 350px;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner p {
+    color: #fff;
+    font-size: 36px;  /* crescendo o tamanho da fonte*/
+    width: 280px;
+}
+
+/*Social*/
+.social {
+    margin: 50px 0; /* pra deixar espaçamento pra fora, puramente pra separar */
+}
+
+.social .caixas {
+    display: flex;
+}
+
+.caixa {
+    display: flex;
+    flex-direction: column; /* deixei as divs em colunas */
+    align-items: center; /* os itens da div ficarma centralizados */ 
+    margin: 0 15px; 
+}
+
+.caixa h4{
+    margin: 15px 0;
+    color: #e6005a;
+}
+
+.caixa p {
+    text-align: center;
+}
+
+.caixa img {
+    width: 170px; /* largura de 170 px */
+}
+
+/* RODAPÉ/FOOTER*/
+
+footer {
+    padding: 45px 0; /* aumentar o tamanho/ engordar */   
+    background-color: #32b9cd;
+}
+
+footer .container {
+    justify-content: center;
+}
+
+footer p {
+    color: #fff;
 }
