@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="selecionado" >
+        <option value="inverno">Janeiro</option>
+        <option value="inverno">fevereiro</option>
+        <option value="primavera">Março</option>
+        <option value="primavera">Abril</option>
+        <option value="primavera">Maio</option>
+        <option value="verao">Junho</option>
+        <option value="verao">Julho</option>
+        <option value="verao">Agosto</option>
+        <option value="outono">Setembro</option>
+        <option value="outono">Outubro</option>
+        <option value="outono">Novembro</option>
+        <option value="inverno">Dezembro</option>
+    </select>
+    
+    <button onclick="analisar_estacao()">Ver estação</button>
+
+    <div id="div_resultado" ></div>
+</body>
+</html>
+
+<script>
+
+    function analisar_estacao() {
+        var mes = selecionado.value
+
+        if (mes == "inverno") {
+            div_resultado.innerHTML = `
+            <img src='https://static.mundoeducacao.uol.com.br/mundoeducacao/conteudo/inverno(1).jpg' style="width:500px">`
+        } else if (mes == "outono") {
+            div_resultado.innerHTML = `
+            <img src='https://www.lopes.com.br/blog/wp-content/uploads/2017/03/capa.jpg' style="width:500px">`
+        } else if (mes == "primavera") {
+            div_resultado.innerHTML = `
+            <img src='https://i0.wp.com/techwek.com/wp-content/uploads/2021/01/estacao-primavera.jpg?resize=1024%2C768&ssl=1' style="width:500px">`
+        } else {
+            div_resultado.innerHTML = `
+            <img src='https://i0.wp.com/techwek.com/wp-content/uploads/2021/01/Verao.jpg?resize=750%2C500&ssl=1' style="width:500px">`
+        }
+    }
+</script>

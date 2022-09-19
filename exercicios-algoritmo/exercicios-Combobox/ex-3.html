@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Select id="select_time">
+        <option value="palmeiras">Palmeiras</option>
+        <option value="sao_paulo">São Paulo</option>
+        <option value="corinthians">Corinthians</option>
+        <option value="santos">Santos</option>
+    </Select>
+    
+    <button onclick="mostrar_escudo()">
+        Ver escudo
+    </button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function mostrar_escudo() {
+        var escudo_escolhido_usuario = select_time.value
+
+        if (escudo_escolhido_usuario == "palmeiras") {
+            div_resultado.innerHTML = ` <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/1200px-Palmeiras_logo.svg.png' style="width:400px">`
+        } else if (escudo_escolhido_usuario == "sao_paulo") {
+            div_resultado.innerHTML = `<img src='https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2026.png' style="width:400px">`
+        } else if (escudo_escolhido_usuario == "corinthians") {
+            div_resultado.innerHTML = `<img src='https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/874.png' style="width:400px">`
+        } else {
+            div_resultado.innerHTML = `<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1200px-Santos_logo.svg.png' style="width:400px">`
+        }
+    }
+
+</script>

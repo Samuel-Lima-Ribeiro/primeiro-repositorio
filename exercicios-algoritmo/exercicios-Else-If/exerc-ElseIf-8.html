@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidades de pães: <input id="input_paes" type="text"> <br>
+    Quantidades de bolachas: <input id="input_bolachas" type="text"> <br>
+    Quantidades de copos achocolatados: <input id="input_copos" type="text">
+    <button onclick="calcular_caloria()">Verificar calorias</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular_caloria() {
+        var pao = Number(input_paes.value) * 50
+        var bolacha = Number(input_bolachas.value) * 80
+        var achocolatado = Number(input_copos.value) * 70
+
+        var calorias = pao + bolacha + achocolatado
+
+        if (calorias < 200) {
+            div_resultado.innerHTML = `
+            Está perdendo peso
+            `
+        } else if (calorias <= 400) {
+            div_resultado.innerHTML = `
+            Nem lá, nem cá. Vai manter a forma.
+            `
+        } else {
+            div_resultado.innerHTML = `
+            Forte tendência á ganhar peso !
+            `
+        }
+    }
+
+</script>
