@@ -1,0 +1,63 @@
+.banner {
+    background-image: url("./assets/img/bg-jelly-fish-para_outras_pags.png");
+    padding: 100px 0; /* crescer a imagem / 100 para cima e baixo / 0 para os lados  // le no sentido horario*/
+    background-size: cover; /* centralizar a imagem */
+    height: 95vh; /* */ /* pega o tamanho da tela do dispositivo*/
+}
+
+.banner .container {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.caixa-formulario {
+    background-color: #e5e5e5;
+    padding: 50px 100px; /* crescer pra cima e pros lados */
+    border-radius: 10px; /* arrendodar borda */
+    display: flex; /* filhos aplicarem o flexbox */
+    flex-direction: column; /* direçao dos filhos coluna */
+    align-items: center; /* itens no centro */
+    justify-content: center;
+}
+
+.caixa-formulario h2 {
+    color: palevioletred;
+    margin-bottom: 20px; /* separar o titulo dos campos de formulario */
+}
+
+.campo {
+    display: flex; /* */
+    flex-direction: column; /* tudo que ta em campo virou coluna*/
+    align-items: flex-start; /* os itens começar ao lado da borda */
+    justify-content: flex-start;
+}
+
+.campo label {
+    color:palevioletred;
+    font-size: 20px; /* aumentou o tamanho da fonte */
+    padding: 10px 0; /* crescou 10 pra cima e baixo, lado 0 */
+}
+
+.campo input {
+    padding: 10px; /* aumentar tamnho do input */
+    border-radius: 10px; /* arredondar borda */
+    border: 2px solid #32b9cd; /* deixar a cor da borda azul */
+}
+
+.caixa-formulario button {
+    margin-top: 20px; /* margim pra cima, n encostar com os outros campos */
+    width: 120px; /*  */
+    color: #fff; /* cor do titulo*/ 
+    background-color: #e6005a; /* cor do fundo */
+    padding: 10px 20px; /* crescer 10 pra cima e baixo, 20 pros lados */
+    font-weight: bold; /* fonte forte */
+    border: none; /* sem borda */
+    border-radius: 5px; /* arrendodar */
+    cursor: pointer; /* mostrar maozinha*/
+}
+
+/* DEIXAR O BOTAO COM OUTRA COR*/
+.caixa-formulario button:hover /* :hover // pseudoclass */ {
+    opacity: 0.8; /* vai do 0 ao 1 // diminui a cor */
+}
