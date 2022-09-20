@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Sua idade: <input type="text" id="input_idade"> 
+    Seu peso: <input type="text" id="input_peso"> 
+    <button onclick="validar_brinquedo()">Pode brincar?</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function validar_brinquedo() {
+        var idade_usuario = Number(input_idade.value)
+        var peso_usuario = Number(input_peso.value)
+
+        if (idade_usuario > 15 && peso_usuario <= 100) {
+            div_resultado.innerHTML = `Você poderá brincar <img src="https://moodle.sptech.school/theme/image.php/degrade/core/1643201436/s/smiley">`
+        }else {
+            div_resultado.innerHTML = `Você não poderá brincar <img src="https://moodle.sptech.school/theme/image.php/degrade/core/1643201436/s/sad">`   
+        }
+    }
+
+</script>

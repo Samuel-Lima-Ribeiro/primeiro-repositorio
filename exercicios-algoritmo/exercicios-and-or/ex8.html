@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome da empresa:  <input type="text" id="input_nome_empresa"> <br>
+    Valor da bolsa da empresa: <input type="text" id="input_valor_bolsa"> <br> 
+    Valor do VR da empresa: <input type="text" id="input_valor_vr"> <br>
+    Tempo de deslocamento em minutos: <input type="text" id="input_tempo_deslocamento"> 
+
+    <button onclick="verificar_criterio()">É preferida?</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function verificar_criterio() {
+        var nome_empresa = input_nome_empresa.value
+        var valor_bolsa = Number(input_valor_bolsa.value)
+        var valor_vr = Number(input_valor_vr.value)
+        var tempo_deslocamento = Number(input_tempo_deslocamento.value)
+
+        if (valor_bolsa >= 1800 || valor_vr >= 20 || tempo_deslocamento <= 30) {
+            div_resultado.innerHTML = `A empresa ${nome_empresa} é uma de suas preferência`
+        } else {
+            div_resultado.innerHTML = `A empresa ${nome_empresa} está fora da sua lista`
+        }
+    }
+
+</script>
