@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira temperatura: <input type="text" id="input_temperatura"> <br>
+    Insira umidade do ar: <input type="text" id="input_umidade_ar"> <br>
+    <button onclick="verificar_clima()">Avaliar clima</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function verificar_clima () {
+        var temperatura = input_temperatura.value
+        var umidade = input_umidade_ar.value
+
+        if (umidade < 0 || umidade > 100) {
+            alert("Valor de umidade inválido")
+            div_resultado.innerHTML = ""
+        } else if ( (temperatura >= 22 && temperatura <= 23) && umidade < 60 ) {
+            div_resultado.innerHTML = "Clima agradável"
+        } else {
+            div_resultado.innerHTML =   "Clima desconfortável"
+        }
+    }
+
+</script>
