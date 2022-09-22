@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Tempo de cozimento em minutos: <input type="text" id="input_tempo_cozimento"> <br>
+    Quantidade de sal em gramas: <input type="text" id="input_sal_grama"> <br>
+    <select name="" id="select_arroz">
+        <option value="integral">Arroz integral</option>
+        <option value="branco">Arroz branco</option>
+    </select>
+    <button onclick="avaliar_arroz()">Avaliar arroz</button>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function avaliar_arroz() {
+        var cozimento_min = Number(input_tempo_cozimento.value)
+        var sal_grama = Number(input_sal_grama.value)
+        var arroz_escolhido = select_arroz.value
+
+        if ( (cozimento_min == 10 && sal_grama <=10 && arroz_escolhido == "branco") || (cozimento_min == 20 && sal_grama <=15 && arroz_escolhido == "integral")) {
+            div_resultado.innerHTML = "Arroz perfeito"
+        } else {
+            div_resultado.innerHTML = "Seu arroz não está perfeito"
+        }
+
+        if (cozimento_min == 10 && sal_grama <=10 && arroz_escolhido == "branco") {
+            div_resultado.innerHTML +=`<br> <img style="height:200px" src="https://www.acasaencantada.com.br/wp-content/uploads/2019/01/arroz-perfeito-1200x900.jpg">`
+        } else if (cozimento_min == 20 && sal_grama <=15 && arroz_escolhido == "integral") {
+            div_resultado.innerHTML += `<br> <img style="height:200px" src="https://cdn.cumbucaboa.com.br/media/catalog/product/cache/1/image/570x465/9df78eab33525d08d6e5fb8d27136e95/a/r/arroz_integral.jpg.png">`
+        } else {
+            div_resultado.innerHTML += `<br> <img style="height:200px" src="https://noticiasdatv.uol.com.br/media/uploads/erick-jacquin-freezer-bronca-pesadelo-na-cozinha-reproducao-band-min.jpg">`
+        }
+    }
+
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota de avaliação: <input type="text" id="input_nota_avaliacao"> 
+    <button onclick="avaliar_atendente()">Avaliar</button>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function avaliar_atendente() {
+        var nota_avaliacao = Number(input_nota_avaliacao.value)
+
+        if (nota_avaliacao < 0 || nota_avaliacao > 5) {
+            alert("Nota inválida. Digite de 0 a 5")
+        } else if (nota_avaliacao < 0.5) {
+            div_resultado.innerHTML = `<img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png">`
+        } else if (nota_avaliacao < 1) {
+            div_resultado.innerHTML = `<img src="./icons8-meia-estrela-48.png"> <img src="./icons8-meia-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png">`
+        } else if (nota_avaliacao < 1.5) {
+            div_resultado.innerHTML = `<img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png">`
+        } else if (nota_avaliacao < 2) {
+            div_resultado.innerHTML = `<img src="./icons8-estrela-48.png"> <img src="./icons8-meia-estrela-48.png"> <img src="./icons8-meia-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png">`
+        } else if (nota_avaliacao < 2.5) {
+            div_resultado.innerHTML = `<img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> `
+        } else if (nota_avaliacao < 3) {
+            div_resultado.innerHTML = `<img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-meia-estrela-48.png"> <img src="./icons8-meia-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png">`
+        } else if (nota_avaliacao < 3.5) {
+            div_resultado.innerHTML = `<img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png">`
+        } else if (nota_avaliacao < 4) {
+            div_resultado.innerHTML = `<img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-meia-estrela-48.png"> <img src="./icons8-meia-estrela-48 (1).png"> <img src="./icons8-estrela-48 (1).png">`
+        } else if (nota_avaliacao < 4.5) {
+            div_resultado.innerHTML = `<img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48 (1).png">`
+        } else if (nota_avaliacao < 5) {
+            div_resultado.innerHTML = `<img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png">  <img src="./icons8-estrela-48.png">  <img src="./icons8-estrela-48.png"> <img src="./icons8-meia-estrela-48.png"> <img src="./icons8-meia-estrela-48 (1).png">`
+        } else {
+            div_resultado.innerHTML = `<img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png"> <img src="./icons8-estrela-48.png">`
+        }
+    }
+
+</script>
