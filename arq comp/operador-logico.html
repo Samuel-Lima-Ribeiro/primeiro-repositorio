@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Está chovendo? <select name="" id="select_chuva">
+        <option value=0>Não</option>
+        <option value=1>Sim</option>
+    </select> <br> <br>
+    Tenho dinheiro? <select name="" id="select_dinheiro">
+        <option value=0>Não</option>
+        <option value=1>Sim</option>
+    </select> <br> <br>
+    Tenho tempo? <select name="" id="select_tempo">
+        <option value=0>Não</option>
+        <option value=1>Sim</option>
+    </select> <br><br>
+    Gosto de nuggets? <select name="" id="select_nuggets">
+        <option value=0>Não</option>
+        <option value=1>Sim</option>
+    </select> <br> <br>
+
+    <button onclick="calcular_mcDonalds()">Devo ir ao McDonnald’s?</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular_mcDonalds() {
+        var chuva = Number(select_chuva.value)
+        var dinheiro = Number(select_dinheiro.value)
+        var tempo = Number(select_tempo.value)
+        var nuggets = Number(select_nuggets.value)
+
+        if ( (!chuva * !dinheiro * tempo * !nuggets) || 
+        (!chuva * !dinheiro * tempo * nuggets) ||
+        (!chuva * dinheiro * tempo * nuggets) ||
+        (chuva * !dinheiro * tempo * nuggets) ||
+        (chuva * dinheiro * tempo * nuggets) ) 
+        {
+            div_resultado.innerHTML = '<br>Deve ir'
+        } else {
+            div_resultado.innerHTML = '<br>Não deve'
+        }
+    }
+
+</script>
