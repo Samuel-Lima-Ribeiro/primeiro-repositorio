@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número: <input type="text" id="input_numero"> <br>
+    <button onclick="multiplicar_por_5()">Adoro múltiplos de 5</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function multiplicar_por_5() {
+        var numero_usuario = input_numero.value
+        var contador = 1
+
+        if (numero_usuario < 20 || numero_usuario > 100) {
+            alert("Número invalido")    
+        } else {            
+            while (contador <= (numero_usuario / 5)) {
+                div_resultado.innerHTML += `${contador * 5} <br>`
+                contador += 1
+            }
+        }
+    }
+
+</script>
