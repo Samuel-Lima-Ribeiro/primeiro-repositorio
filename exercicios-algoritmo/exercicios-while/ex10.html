@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de títulos mundiais : <input type="text" id="input_qtd_titulo"> <br>
+    <button onclick="mostrar_trofeu()">Ver troféus de mundiais FIFA</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function mostrar_trofeu() {
+        var qtd_titulo = Number(input_qtd_titulo.value)
+        var contador = 0
+        var torcedor_chorando = "<img style='width:200px' src='https://ogimg.infoglobo.com.br/fotogalerias/24097275-ad6-74a/FT1086A/652/x85840672_ESP23-11-2019-Torcedores-do-Flamengo-assistem-final-da-Libertadores-no-MaracanaFoto-M.jpg.pagespeed.ic.fwDuWKYw3V.jpg' />"
+
+        var taca_mundial = "<img style='width:200px' src='https://cf.shopee.com.br/file/f4957cbcf401d373af4218e035197087' />"
+
+        if (qtd_titulo <= 0) {
+            div_resultado.innerHTML = `${torcedor_chorando} <br>`
+        } else {
+            while (contador < qtd_titulo ) {
+                div_resultado.innerHTML += `${taca_mundial}`
+                contador += 1   
+            }
+        }
+    }
+
+</script>
