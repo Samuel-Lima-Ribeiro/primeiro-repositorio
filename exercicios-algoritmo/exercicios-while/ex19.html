@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    Quantos ônibus você pega? <input id="input_qtd_onibus" type="text"> <br>
+    Quantos trens você pega? <input type="text" id="input_qtd_trem"> <br>
+    Quantos mêtros você pega? <input type="text" id="input_qtd_metro"> <br>
+    <button onclick="mostrar_trajeto()">#Partiu Trajeto</button>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function mostrar_trajeto() {
+        var contador = 0
+        var qtd_onibus = Number(input_qtd_onibus.value)
+        var qtd_trem = Number(input_qtd_trem.value)
+        var qtd_metro = Number(input_qtd_metro.value)
+        
+        while(contador < qtd_onibus) {
+            contador += 1
+            if (contador >= 3) {
+                div_resultado.innerHTML += `
+                <span style="color: red;">Pegando o ${contador}º busão. Já cansado! </span><br>
+                `
+            } else if (contador == 2) {
+                div_resultado.innerHTML += `
+                <span style="color: red;">Pegando o ${contador}º busão. Começando a cansar </span><br>
+                `
+            } else {
+                div_resultado.innerHTML += `
+                <span style="color: red;">Pegando o ${contador}º busão </span><br>
+                `
+            }
+        }
+
+        contador = 0
+
+        while(contador < qtd_trem) {
+            contador += 1
+            if(contador >= 3) {
+                div_resultado.innerHTML += `
+                <span style="color: green;">Pegando o ${contador}º trem. Já cansado! </span><br>
+                `
+            } else if (contador == 2) {
+                div_resultado.innerHTML += `
+                <span style="color: green;">Pegando o ${contador}º trem. Começando a cansar </span><br>
+                `
+            } else {
+                div_resultado.innerHTML += `
+                <span style="color: green;">Pegando o ${contador}º trem </span><br>
+                `
+            }
+        }
+
+        contador = 0
+
+        while(contador < qtd_metro) {
+            contador += 1
+            if(contador >= 3) {
+                div_resultado.innerHTML += `
+                <span style="color: blue;">Pegando o ${contador}º metrô. Já cansado! </span><br>
+                `
+            } else if (contador == 2) {
+                div_resultado.innerHTML += `
+                <span style="color: blue;">Pegando o ${contador}º metrô. Começando a cansar </span><br>
+                `
+            } else {
+                div_resultado.innerHTML += `
+                <span style="color: blue;">Pegando o ${contador}º metrô </span><br>
+                `
+            }
+        }
+    }
+
+</script>

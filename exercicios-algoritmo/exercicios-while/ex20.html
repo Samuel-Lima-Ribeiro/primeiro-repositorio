@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="mostrar_numeros()">Curto 3 e 5!"</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function mostrar_numeros() {
+        var contador = 0
+        
+        while(contador <= 100) {
+            if((contador % 3 == 0 && contador % 5 == 0)) {
+                div_resultado.innerHTML += `É TRI!É PENTA! <br>`
+                contador += 1   
+            } else if ((contador % 3 == 0)) {
+                div_resultado.innerHTML += `É TRI! <br>`
+                contador += 1
+            } else if ((contador % 5 == 0)) {
+                div_resultado.innerHTML += `É PENTA! <br>`
+                contador += 1
+            } else {
+                div_resultado.innerHTML += `${contador} <br>`
+                contador += 1
+            }
+        }
+    }
+
+</script>

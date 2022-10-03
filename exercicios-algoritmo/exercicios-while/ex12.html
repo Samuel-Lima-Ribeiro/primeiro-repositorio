@@ -34,7 +34,7 @@
         div_resultado.innerHTML = ""
 
         while (contador <= numero_fim_tabuada) {
-            if ((contador % 2) == 0) {
+            if (contador % 2 == 0) {
                 div_resultado.innerHTML += `<span style="color: blue;">${numero_base} x ${contador} = ${contador * numero_base} </span><br>`
             } else {
                 div_resultado.innerHTML += `<span style="color: red;">${numero_base} x ${contador} = ${contador * numero_base} </span><br>`
