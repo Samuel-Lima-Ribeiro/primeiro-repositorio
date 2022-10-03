@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um número: <input id="ipt_numero_usuario" type="text"> <br>
+    Digite uma frase: <input type="text" id="ipt_frase_usuario"> <br>
+    <button onclick="papagaiar()">Papagaio</button>
+</body>
+</html>
+
+<script>
+
+    function papagaiar() {
+        var numero_usuario = ipt_numero_usuario.value
+        var frase_usuario = ipt_frase_usuario.value
+        var contador = 1
+
+        if (frase_usuario.length < 3) {
+            alert("Frase inválida! Tente uma frase com 3 letras ou mais!")
+        } else {
+            while (contador <= numero_usuario) {
+                alert(frase_usuario)
+                contador += 1
+            }
+        }
+    }
+
+</script>

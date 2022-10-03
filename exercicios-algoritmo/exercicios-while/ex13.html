@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    De quantos em quantos dias faz musculação: <input id="input_dias_musculacao" type="text"> <br>
+    <button onclick="rotina_mensal()">Exibir rotina mensal</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function rotina_mensal() {
+        var contador = 1
+        var musculacao = Number(input_dias_musculacao.value)
+        var dia = 1
+
+        while (contador <= 30) {
+
+            if (contador == dia) {
+                div_resultado.innerHTML += `Dia ${contador} - Musculação <br>`
+                dia = dia + musculacao
+                contador += 1
+            } else {
+                div_resultado.innerHTML += `Dia ${contador} - Comer, dormir etc <br>`
+                contador += 1
+            }
+
+        }
+    }
+
+</script>

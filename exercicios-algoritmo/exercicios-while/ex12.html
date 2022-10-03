@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Escolha a tabuada: 
+    <select name="" id="select_tabuada">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select><br>
+    Até que número a tabuada vai: <input type="text" id="input_numero_fim_tabuada"><br>
+    <button onclick="fazer_tabuada()">Ver Tabuada</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function fazer_tabuada() {
+        var numero_base = select_tabuada.value
+        var numero_fim_tabuada = input_numero_fim_tabuada.value
+        var contador = 1
+
+        div_resultado.innerHTML = ""
+
+        while (contador <= numero_fim_tabuada) {
+            if ((contador % 2) == 0) {
+                div_resultado.innerHTML += `<span style="color: blue;">${numero_base} x ${contador} = ${contador * numero_base} </span><br>`
+            } else {
+                div_resultado.innerHTML += `<span style="color: red;">${numero_base} x ${contador} = ${contador * numero_base} </span><br>`
+            }
+            contador += 1
+        }
+
+    }
+
+</script>

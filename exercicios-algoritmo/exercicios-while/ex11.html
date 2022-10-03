@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de voltas que o carro dará numa corrida: <input type="text" id="input_qtd_voltas">
+    <button onclick="fazer_corrida()">Iniciar corrida!</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function fazer_corrida() {
+        var qtd_voltas = input_qtd_voltas.value
+        var contador = 1
+
+        while (contador <= qtd_voltas) {
+            div_resultado.innerHTML += `Carro dando a ${contador}ª volta <br>`
+            contador += 1
+
+            if (contador > qtd_voltas) {
+                div_resultado.innerHTML += `Corrida finalizada!`
+            } 
+        }
+    }
+
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos elefantes: <input type="text" id="input_numero_elefante"> <br>
+    <button onclick="cancao_elefante()">Atazanar a médium</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function cancao_elefante() {
+        var qtd_elefante = Number(input_numero_elefante.value)
+        var contador = 1
+        var incomodar = "incomodam, "
+        div_resultado.innerHTML = ""
+
+        while (contador <= qtd_elefante) {
+            contador += 1
+            incomodar = incomodar + "incomodam, "
+            div_resultado.innerHTML += `
+            1 elefante incomoda muita gente! <br>
+            
+            ${contador} ${incomodar} muito mais! <br>
+            `
+        }
+    }
+
+</script>

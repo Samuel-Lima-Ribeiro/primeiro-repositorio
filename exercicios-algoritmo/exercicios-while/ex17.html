@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas pessoas vão entrar no carro? <input type="text" id="input_passageiros_carro"> <br>
+    Capacidade máxima de passageiros? <input type="text" id="input_capacidade_maxima"> <br>
+    <button onclick="calcular_passageiros()">#Partiu Carona</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular_passageiros() {
+        var qtd_passageiros = Number(input_passageiros_carro.value)
+        var qtd_maxima_passageiros = Number(input_capacidade_maxima.value)
+        var contador = 1
+        div_resultado.innerHTML = ""
+
+        while (contador <= qtd_passageiros) {
+            if (contador == 1) {
+                div_resultado.innerHTML += "Entrou o 1º passageiro (que é o(a) motorista)"
+                contador += 1
+            }else if (contador <= qtd_maxima_passageiros) {
+                div_resultado.innerHTML += `<br>Entrou o ${contador}º passageiro`
+                contador += 1
+            } else {
+                div_resultado.innerHTML += `<br>O ${contador}º passageiro terá que esperar!`
+                contador += 1  
+            }
+        }
+    }
+
+</script>
