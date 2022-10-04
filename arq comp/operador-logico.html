@@ -37,11 +37,11 @@
         var tempo = Number(select_tempo.value)
         var nuggets = Number(select_nuggets.value)
 
-        if ( (!chuva * !dinheiro * tempo * !nuggets) || 
-        (!chuva * !dinheiro * tempo * nuggets) ||
-        (!chuva * dinheiro * tempo * nuggets) ||
-        (chuva * !dinheiro * tempo * nuggets) ||
-        (chuva * dinheiro * tempo * nuggets) ) 
+        if ( (!chuva && !dinheiro && tempo && !nuggets) || 
+        (!chuva && !dinheiro && tempo && nuggets) ||
+        (!chuva && dinheiro && tempo && nuggets) ||
+        (chuva && !dinheiro && tempo && nuggets) ||
+        (chuva && dinheiro && tempo && nuggets) ) 
         {
             div_resultado.innerHTML = '<br>Deve ir'
         } else {
