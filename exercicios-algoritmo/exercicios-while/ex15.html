@@ -21,14 +21,21 @@
         var incomodar = "incomodam, "
         div_resultado.innerHTML = ""
 
-        while (contador <= qtd_elefante) {
+        while (contador < qtd_elefante) {
             contador += 1
-            incomodar = incomodar + "incomodam, "
+        
+            if (contador == 1) {
+                div_resultado.innerHTML += `
+            1 elefante incomoda muita gente! <br>
+            `
+            }else {
+                incomodar = incomodar + "incomodam, "
             div_resultado.innerHTML += `
             1 elefante incomoda muita gente! <br>
             
             ${contador} ${incomodar} muito mais! <br>
             `
+            }
         }
     }
 
