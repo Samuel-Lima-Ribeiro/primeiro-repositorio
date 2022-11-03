@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Valor do depositado: <input type="text" id="input_valor_depositado"> <br>
+    Dia do depósito: <input type="text" id="input_dia_depositado"> <br>
+    <button onclick="guardar_dinheiro()">guardar</button>  <br>
+    Começo do intervalo: <input type="text" id="input_comeco_intervalo"> <br>
+    Fim do intervalo: <input type="text" id="input_fim_intervalo"> <br>
+    <button  onclick="mostrar_historico_deposito()">Rever Depósitos</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+var lista_dinheiro_guardado = []
+var lista_dias_deposito = []
+
+    function guardar_dinheiro() {
+        var dinheiro_depositado = input_valor_depositado.value
+        var dia_deposito = input_dia_depositado.value
+
+        lista_dinheiro_guardado.push(dinheiro_depositado)
+        lista_dias_deposito.push(dia_deposito)
+    }
+
+    function mostrar_historico_deposito() {
+        div_resultado.innerHTML = ""
+
+        var comeco_intervalo = Number(input_comeco_intervalo.value)
+        var fim_intervalo = Number(input_fim_intervalo.value)
+        var dias_no_intervalo = 0
+        var total_deposito_intervalo = 0
+
+        for(contador = comeco_intervalo; contador <= fim_intervalo; contador++) {
+            var posicao_atual = contador - 1
+
+            if(contador % 2 == 0) {
+                div_resultado.innerHTML += `<span style="background-color: cornflowerblue"> dia = ${lista_dias_deposito[posicao_atual]}   Valor depositado = R$ ${lista_dinheiro_guardado[posicao_atual]} <br> </span>`
+            }  else {
+                div_resultado.innerHTML += `<span style="background-color: lawngreen"> dia = ${lista_dias_deposito[posicao_atual]}   Valor depositado = R$ ${lista_dinheiro_guardado[posicao_atual]} <br> </span>`
+            }
+            total_deposito_intervalo += Number(lista_dinheiro_guardado[posicao_atual])
+            dias_no_intervalo += 1
+        }
+        div_resultado.innerHTML += `Quantidade de dias selecionados: ${dias_no_intervalo} , valor total dos depósitos: ${total_deposito_intervalo} , média do depósito: ${total_deposito_intervalo / dias_no_intervalo}`    
+    }
+
+</script>

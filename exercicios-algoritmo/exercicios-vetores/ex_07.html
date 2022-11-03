@@ -32,8 +32,15 @@
     function pesquisar() {
         var aluno_pesquisado = input_pesquisa_aluno.value
         var qtd_nome_aparece = 0
+        var aluno_existe = false
 
-        if (lista_alunos.indexOf(aluno_pesquisado) > -1) {
+        for(var contador = 0; contador < lista_alunos.length; contador++) {
+            if(lista_alunos[contador] == aluno_pesquisado) {
+                aluno_existe = true
+            }
+        }
+
+        if (aluno_existe) {
 
             for (var contador = 0; contador < lista_alunos.length; contador++) {
                 if (lista_alunos[contador] == aluno_pesquisado) {

@@ -7,6 +7,57 @@
     <title>Document</title>
 </head>
 <body>
-    
+    Linhas de ônibus que pegou: <input type="text" id="input_linha_onibus"> 
+    <button onclick="cadastrar_linha()">Gravar busão</button> <br>
+    Linha que pegou: <input type="text" id="input_linha_pega">
+    <button onclick="pesquisar_linha()">Pesquisar</button>
+    <div id="div_linhas_pegas"></div>
 </body>
 </html>
+
+<script>
+var lista_linhas_onibus = []
+
+    function cadastrar_linha() {
+        div_linhas_pegas.innerHTML = ""
+        lista_linhas_onibus.push(input_linha_onibus.value)
+
+        for(contador = 0; contador < lista_linhas_onibus.length; contador++) {
+            div_linhas_pegas.innerHTML +=  `${lista_linhas_onibus[contador]} <br>`
+        }
+    }
+
+    function pesquisar_linha() {
+        var linha_pesquisada = input_linha_pega.value
+        var pegou_linha = false
+
+        for(var contador = 0; contador < lista_linhas_onibus.length; contador++) {
+            if(lista_linhas_onibus[contador] == linha_pesquisada) {
+                pegou_linha = true
+            }            
+        }
+
+        if(!pegou_linha) {
+            div_linhas_pegas.innerHTML += `Você nunca pegou essa linha <br>`
+        } else {
+            var vezes_linhas_pega = 0
+            var ordem_pega = ""
+
+            for(contador = 0; contador < lista_linhas_onibus.length; contador++) {
+                if (lista_linhas_onibus[contador] == linha_pesquisada) {
+                    vezes_linhas_pega += 1
+
+                    if(vezes_linhas_pega > 1) {
+                        ordem_pega += `, ${contador + 1}`
+                    } else {
+                        ordem_pega += `${contador + 1}`
+                    }
+                }   
+            }
+
+            div_linhas_pegas.innerHTML += ` Você já pegou essa linha ${vezes_linhas_pega} vezes, nessa ordem: ${ordem_pega} <br>`
+        }
+    }
+
+
+</script>
