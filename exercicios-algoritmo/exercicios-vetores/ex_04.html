@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Filmes favoritos: <input type="text" id="input_filmes_favoritos"> <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+var lista_viagens = []
+
+    function cadastrar() {
+        lista_viagens.push(input_filmes_favoritos.value)
+
+        div_resultado.innerHTML = ""
+
+        for(contador = 0; contador < lista_viagens.length; contador++) {
+            if (contador % 2 == 0) {
+                div_resultado.innerHTML += `<span style="color: blue">${lista_viagens[contador]} <br> </span>`
+            } else  {
+                div_resultado.innerHTML += `<span style="color: red">${lista_viagens[contador]} <br> </span>`
+            }
+        }
+    }
+
+</script>

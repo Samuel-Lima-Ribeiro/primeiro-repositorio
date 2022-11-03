@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Nome do aluno: <input type="text" id="input_nome_aluno">
+    <button onclick="cadastrar()">Cadastrar</button> <br>
+    Pesquisar aluno: <input type="text" id="input_pesquisa_aluno">
+    <button onclick="pesquisar()">Pesquisar</button> <br>
+    Quantida de alunos inseridos: <span id="span_qtd_alunos">0</span>
+
+</body>
+
+</html>
+
+<script>
+    var lista_alunos = []
+
+    function cadastrar() {
+        var nome_aluno = input_nome_aluno.value
+        lista_alunos.push(nome_aluno)
+
+        span_qtd_alunos.innerHTML = lista_alunos.length
+    }
+
+    function pesquisar() {
+        var aluno_pesquisado = input_pesquisa_aluno.value
+        var qtd_nome_aparece = 0
+
+        if (lista_alunos.indexOf(aluno_pesquisado) > -1) {
+
+            for (var contador = 0; contador < lista_alunos.length; contador++) {
+                if (lista_alunos[contador] == aluno_pesquisado) {
+                    qtd_nome_aparece += 1
+                }
+            }
+            alert(`O aluno ${aluno_pesquisado} já existe na lista, aparece ${qtd_nome_aparece} na lista`)
+        } else {
+            alert(`O aluno ${aluno_pesquisado} não existe na lista`)
+        }
+    }
+
+</script>

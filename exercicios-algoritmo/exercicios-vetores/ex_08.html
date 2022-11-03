@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota: <input type="text" id="input_nota"> 
+    <button onclick="cadastrar()">Cadastrar Nota</button> <br>
+    Começo do intervalo: <input type="text" id="input_inicio_intervalo"> <br>
+    Fim do intervalo: <input type="text" id="input_fim_intervalo"> <br>
+    <button onclick="mostrar_notas()">Rever as notas</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+lista_notas = []
+
+    function cadastrar() {
+        var nota = Number(input_nota.value)
+        lista_notas.push(nota)
+    }
+
+    function mostrar_notas() {
+        var comeco_intervalo = Number(input_inicio_intervalo.value)
+        var fim_intervalo = Number(input_fim_intervalo.value)
+        var qtd_itens_registrados = 0
+        var media_lista = 0
+
+        div_resultado.innerHTML = ""
+
+        for(var contador = comeco_intervalo; contador <= fim_intervalo; contador++) {
+            
+            if(lista_notas[contador] != undefined) {
+                qtd_itens_registrados += 1
+                media_lista += lista_notas[contador]
+
+                div_resultado.innerHTML += `${lista_notas[contador]} <br>`
+            }
+        }
+        media_lista = media_lista / qtd_itens_registrados
+
+        div_resultado.innerHTML +=`Foram cadastras ${qtd_itens_registrados} notas que estão no intervalo de  ${comeco_intervalo} até ${fim_intervalo} e a média dessas notas é ${media_lista.toFixed(1)}`
+    }
+
+</script>
