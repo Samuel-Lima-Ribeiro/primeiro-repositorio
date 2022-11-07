@@ -13,8 +13,7 @@
     <button onclick="cadastrar()">Cadastrar</button> <br>
     Pesquisar aluno: <input type="text" id="input_pesquisa_aluno">
     <button onclick="pesquisar()">Pesquisar</button> <br>
-    Quantida de alunos inseridos: <span id="span_qtd_alunos">0</span>
-
+    <div id="div_resultado"></div>
 </body>
 
 </html>
@@ -23,6 +22,7 @@
     var lista_alunos = []
 
     function cadastrar() {
+        div_resultado.innerHTML = ""
         var nome_aluno = input_nome_aluno.value
         var aluno_existe = false
 
@@ -30,13 +30,13 @@
             if (lista_alunos[contador] == nome_aluno) {
                 aluno_existe = true
             }
+            div_resultado.innerHTML += `${lista_alunos[contador]} <br>`
         }
 
         if (!aluno_existe) {
             lista_alunos.push(nome_aluno)
-        }
-
-        span_qtd_alunos.innerHTML = lista_alunos.length
+            div_resultado.innerHTML += `${lista_alunos[lista_alunos.length - 1]} <br>`
+        } 
     }
 
     function pesquisar() {

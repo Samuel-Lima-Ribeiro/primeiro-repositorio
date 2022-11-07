@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do produto: <input type="text" id="input_nome_produto"> <br>
+    Preço de compra: <input type="text" id="input_preco_produto"> <br>
+    <button onclick="cadastrar()">Cadastrar</button> <button onclick="exibir()">Relatório de estoque</button>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+var lista_produtos = []
+var lista_precos = []
+
+    function cadastrar() {
+        var produto = input_nome_produto.value
+        var preco = Number(input_preco_produto.value)
+
+        lista_produtos.push(produto)
+        lista_precos.push(preco)
+    }
+
+    function exibir() {
+        var qtd_itens_produtos = lista_produtos.length
+        var soma_precos_compra = 0
+        var soma_precos_venda = 0
+        var produto_mais_caro = lista_produtos[0]
+        var produto_mais_barato = lista_produtos[0]
+        var preco_maior = lista_precos[0]
+        var preco_menor = lista_precos[0]
+
+        div_resultado.innerHTML = `Total de produtos: ${qtd_itens_produtos}<br>`
+
+        for(var contador = 0; contador < qtd_itens_produtos; contador++) {
+            var preco_produto = lista_precos[contador]
+            var venda_produto = preco_produto * 1.25
+            soma_precos_compra += preco_produto
+            soma_precos_venda += venda_produto
+
+            if(preco_maior < lista_precos[contador]) {
+                produto_mais_caro = lista_produtos[contador]
+                preco_maior = lista_precos[contador]
+            }
+
+            if(preco_menor > lista_precos[contador]) {
+                produto_mais_barato = lista_produtos[contador]
+                preco_menor = lista_precos[contador]
+            }
+
+            div_resultado.innerHTML += `
+            Produto ${contador + 1}: ${lista_produtos[contador]} <br>
+            Preço de compra: R$${preco_produto.toFixed(2)}. Vender por R$${venda_produto.toFixed(2)} <br>
+            `
+
+
+        }
+
+        div_resultado.innerHTML += `
+        Produto mais caro: ${produto_mais_caro} <br>
+        Produto mais barato: ${produto_mais_barato} <br>
+        soma dos preços de compra dos produtos: ${soma_precos_compra} <br>
+        média de preço de venda dos produtos ${soma_precos_venda / qtd_itens_produtos}
+        `
+    }
+    
+</script>

@@ -50,7 +50,7 @@
         var media_alunos = 0
         var qtd_chamados = 0
 
-        if(numero_usuario == ("P" || "p")) {
+        if(numero_usuario == ("P" , "p")) {
             for(var contador = 0;contador < lista_ra.length; contador++) {
                 if(lista_ra[contador] % 2 == 0) {
                     media_alunos += Number(lista_nota[contador])
@@ -67,12 +67,19 @@
         }
 
         media_alunos = media_alunos / qtd_chamados
+        var qtd_acima_media = 0
+        var media_acima = 0
 
         for(var contador = 0; contador < lista_ra.length; contador++) {
             if(lista_nota[contador] >= media_alunos) {
                 div_resultado.innerHTML += `Aluno com RA = ${lista_ra[contador]} e nota ${lista_nota[contador]} foi selecionado pois a média é ${media_alunos}<br>`
+
+                qtd_acima_media += 1
+                media_acima += lista_nota[contador]
             }
         }
+        div_resultado.innerHTML += `quantidade de notas acima da média: ${qtd_acima_media}, nova média: ${media_acima / qtd_acima_media}`
+
     }
 
 </script>
